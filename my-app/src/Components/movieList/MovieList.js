@@ -1,18 +1,17 @@
 import Movie from '../movie/Movie'
-export default function MovieList(props)
-{
-    return(
+export default function MovieList(props) {
+    return (
         <>
-       
-       
-        {
-            props.recipes.map(recipe =>{
-                return(
-                    <Movie recipe={recipe}/>
-                )
-            })
-        }
+
+
+            {
+                props.recipes.map(recipe => {
+                    return (
+                        <Movie recipe={recipe} />
+                    )
+                })
+            }
         </>
     )
- } 
-     
+}
+

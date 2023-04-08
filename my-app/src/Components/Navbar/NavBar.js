@@ -1,8 +1,8 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-const  NavBar =()=>{
+const NavBar = () => {
     return (
         // <nav>
         //     <h1>recipes website</h1>
@@ -11,14 +11,13 @@ const  NavBar =()=>{
         // </nav>
 
 
-
-        <Navbar bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="primary" variant="light">
             <Container>
-                
+
                 <Nav className="me-auto">
-                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/favRecipes">fav-Movies</Nav.Link>
-  
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href='/Movie'>fav-Movies</Nav.Link>
+
                 </Nav>
             </Container>
         </Navbar>

@@ -3,40 +3,40 @@
 import MovieList from '../movieList/MovieList'
 
 
-import{ useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
-export default function Home(){
-    const [recipes,setRecipes]=useState([])
+export default function Home() {
+    const [recipes, setRecipes] = useState([])
 
-    async function getRecipes(){
-        const url=process.env.REACT_APP_URL;
-        
+    async function getRecipes() {
+        const url = process.env.REACT_APP_URL;
+
 
         const response = await fetch(`${url}/trending`);
-      
+
 
         const recipesData = await response.json();
-      
-       
+
+
         setRecipes(recipesData);
-      
+
 
     }
 
-  
 
-    useEffect(()=>{
+
+    useEffect(() => {
         getRecipes();
-    },[])  
+    }, [])
 
-    return(
+    return (
         <>
-        <h2> this is Home Page</h2>
-       
-    
+            <h2> Movie-List</h2>
 
-        <MovieList  recipes={recipes}/>
+
+
+            <MovieList recipes={recipes} />
         </>
     )
 }
