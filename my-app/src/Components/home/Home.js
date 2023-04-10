@@ -1,7 +1,5 @@
 
-
 import MovieList from '../movieList/MovieList'
-
 
 import { useState, useEffect } from 'react';
 
@@ -24,7 +22,7 @@ export default function Home() {
 
     }
 
-
+   
 
     useEffect(() => {
         getRecipes();
@@ -36,7 +34,9 @@ export default function Home() {
 
 
 
-            <MovieList recipes={recipes} />
-        </>
+            <MovieList recipes={recipes} /> 
+            {/* /*send data inside recipes state as props to child one _Movie list*/ }*/
+       
+   </> 
     )
 }
