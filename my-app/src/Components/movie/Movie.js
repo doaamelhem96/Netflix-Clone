@@ -1,38 +1,31 @@
 
+
+import ModalMovie from "../ModalMovie";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import ModalMovie from "../ModalMovie";
-import { useState } from 'react';
+
+import {useState} from 'react';
 
 export default function Movie(props) {
-  const [showModal, setShowModal] = useState(false);
 
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
+  const [show, setShow] = useState(false);
 
-  const handleAddToFavorite = () => {
-    console.log('Added to favorite:', props.recipe.title);
-    setShowModal(true);
-  };
- 
-
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-
     <>
-
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${props.recipe.poster_path}`} alt={props.recipe.title} />
+     <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${props.trend.poster_path}`} />
         <Card.Body>
-          <Card.Title>{props.recipe.title}</Card.Title>
-          <Button variant="primary" onClick={handleShowModal}>
-            Details
-          </Button>
-          <Button variant="success" onClick={handleAddToFavorite}>
-            Add to favorite
-          </Button>
+          <Card.Title>{props.trend.title}</Card.Title>
+          <Card.Text>{props.trend.overview}</Card.Text>
+          <Button variant="primary" onClick={handleShow}> show details</Button>
+          
         </Card.Body>
       </Card>
-      <ModalMovie show={showModal} handleClose={handleCloseModal} recipe={props.recipe} />
+
+      <ModalMovie show={show}  handleClose={handleClose} trendData = {props.trend}  commentHandler={props.commentHandler}/>
+     
     </>
   );
 }
