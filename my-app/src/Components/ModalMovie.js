@@ -23,7 +23,7 @@ export default function ModalMovie(props) {
         <Modal.Title>{props.recipe.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <img src={props.recipe.poster_path} alt={props.recipe.title} />
+        <img src={`https://image.tmdb.org/t/p/w500${props.recipe.poster_path}`} style ={{"max-width":"150px"}} alt={props.recipe.title} />
         <Form>
           <Form.Group controlId="comment">
             <Form.Label>Comment</Form.Label>
