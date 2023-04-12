@@ -1,42 +1,37 @@
 
 import MovieList from '../movieList/MovieList'
 
-import { useState, useEffect } from 'react';
+import{ useState, useEffect } from 'react';
 
-
-export default function Home() {
-    const [recipes, setRecipes] = useState([])
-
-    async function getRecipes() {
-        const url = process.env.REACT_APP_URL;
-
-
+export default function Home(){
+     const [trending,setTrending]=useState([])
+    async function getMovies(){
+        const url=process.env.REACT_APP_URL;
+        
         const response = await fetch(`${url}/trending`);
-
-
-        const recipesData = await response.json();
-
-
-        setRecipes(recipesData);
-
-
+         
+        const trendingData = await response.json()
+          
+         setTrending(trendingData);
+        
     }
-
-   
-
-    useEffect(() => {
-        getRecipes();
-    }, [])
-
-    return (
+    function commentHandler(newTrend , id){
+        trending.map(trend=>{
+            if(trend.id === id){
+                
+                trend.comments = newTrend.userComment
+                return trend;
+            }else{
+                return trend
+            }
+        })
+    }
+     useEffect(()=>{
+        getMovies()
+     },[])  
+    return(
         <>
-            <h2> Movie-List</h2>
-
-
-
-            <MovieList recipes={recipes} /> 
-            {/* /*send data inside recipes state as props to child one _Movie list*/ }*/
-       
-   </> 
+        <MovieList  trending={trending} commentHandler={commentHandler}/>
+        </>
     )
 }

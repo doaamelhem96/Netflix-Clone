@@ -1,16 +1,15 @@
 import Movie from '../movie/Movie'
-export default function MovieList(props) {
-    return (
+
+export default function MovieList(props){
+    return(
         <>
-
-
-            {
-                props.recipes.map(recipe => {
-                    return (
-                        <Movie recipe={recipe} />
-                    )
-                })
-            }
+         {
+            props.trending.map(trend =>{
+                return(
+                    <Movie trend={trend} commentHandler={props.commentHandler}/>
+                )
+            })
+        }
         </>
     )
 }

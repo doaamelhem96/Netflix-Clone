@@ -12,7 +12,7 @@ export default function ModalMovie(props) {
   };
 
   const handleAddToFavorite = () => {
-    console.log('Added to favorite:', props.recipe.overview.comment);
+    console.log('Added to favorite:', props.recipe.title.comment);
 
     props.handleClose();
   }; 

@@ -2,17 +2,18 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-const NavBar = () => {
+const  NavBar =()=>{
     return (
-      
+        
        
 
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="light">
-            <Container>
 
+        <Navbar bg="dark" variant="dark">
+            <Container>
+                
                 <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/FavList">fav-Movies</Nav.Link>
+                     <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/favList">Fav-Movies</Nav.Link>
 
                 </Nav>
             </Container>
