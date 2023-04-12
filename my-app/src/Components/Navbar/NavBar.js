@@ -13,7 +13,7 @@ const  NavBar =()=>{
                 
                 <Nav className="me-auto">
                      <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/fav">Fav-Movies</Nav.Link>
+                    <Nav.Link href="/favList">Fav-Movies</Nav.Link>
 
                 </Nav>
             </Container>

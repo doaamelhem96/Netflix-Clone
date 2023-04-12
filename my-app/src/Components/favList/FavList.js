@@ -1,3 +1,5 @@
+
+
 import {useEffect, useState} from 'react';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -5,13 +7,14 @@ import Button from "react-bootstrap/Button";
     
     export default function FavList(){
     
-        const [fav , setFavList ] = useState([]);
+        const [FavList,setFavList ] = useState([]);
     
-      
+    
         async function getFavList(){
-            let url =`${process.env.REACT_APP_URL}/getMovies`;
+             
+            let url2="https://movies-library-1io6.onrender.com/getMovies";
     
-            let response = await fetch(url,{
+            let response = await fetch(url2,{
                 method: 'GET',
             })
     
@@ -52,7 +55,7 @@ import Button from "react-bootstrap/Button";
                 },
             })
             console.log(response)
-           
+            
         }
        
         useEffect(()=>{
@@ -67,9 +70,9 @@ import Button from "react-bootstrap/Button";
         return(
             <>
             <h2> Fav List </h2>
-   
+    
             {
-                fav && fav.map(trend=>{
+                FavList && FavList.map(trend=>{
                     return(
                      
                         <Card style={{ width: "18rem" }}>

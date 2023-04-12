@@ -20,7 +20,6 @@ export default function Home(){
             if(trend.id === id){
                 
                 trend.comments = newTrend.userComment
-                console.log(11111,trend)
                 return trend;
             }else{
                 return trend
