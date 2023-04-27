@@ -15,6 +15,8 @@ export default function Home(){
          setTrending(trendingData);
         
     }
+   
+
     function commentHandler(newTrend , id){
         trending.map(trend=>{
             if(trend.id === id){
