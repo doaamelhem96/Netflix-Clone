@@ -11,12 +11,13 @@ const NavBar = () => {
         // </nav>
 
 
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="light">
+         <Navbar bg="dark" expand="lg"  variant="dark">
             <Container>
 
                 <Nav className="me-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href='/Movie'>fav-Movies</Nav.Link>
+                    <Nav.Link href='/Movie'>Movies-list</Nav.Link>
 
                 </Nav>
             </Container>

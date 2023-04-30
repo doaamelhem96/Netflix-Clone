@@ -1,26 +1,22 @@
 import './App.css';
+import { Route, Routes } from 'react-router';
+import Home from './Components/home/Home.js';
 import NavBar from './Components/Navbar/NavBar';
-import Home from './Components/home/Home'
-import Movie from './Components/movie/Movie'
-import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
-
-
   return (
+
     <>
-      <NavBar />
+   <NavBar/>
+    <div id = 'main'>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/favMovi' element={<Movie />} />
+      <Route path='/' element = {<Home/>}></Route>
       </Routes>
-
-
-
+    </div>
+  
     </>
   );
-
 }
 
 export default App;

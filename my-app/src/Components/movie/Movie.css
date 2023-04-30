@@ -1,0 +1,35 @@
+#card {
+    box-shadow: 0 30px 138px 40px rgb(166, 102, 234);
+    transition: 0.5s;
+    max-width: 200px;
+ color: brown;
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif; 
+ margin: auto; 
+justify-content: space-evenly;
+gap: 8px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+
+    
+  }
+
+#hr1{
+    box-shadow: 0 8px 6px 7px rgb(238, 5, 5);
+    background-color:rgb(111, 255, 0);
+    height:12px;
+  }
+  
+  #card:hover {
+    box-shadow: 0 8px 6px 7px rgb(5, 238, 36);
+    transition: 0.3s;
+  }
+
+  bodey
+  {
+    
+    background-color: black;
+    
+    
+  }

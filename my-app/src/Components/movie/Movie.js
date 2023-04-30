@@ -1,38 +1,31 @@
-
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import ModalMovie from "../ModalMovie";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ModalMovie from '../modalMovie/ModalMovie';
 import { useState } from 'react';
+import './Movie.css';
 
-export default function Movie(props) {
-  const [showModal, setShowModal] = useState(false);
+export default function Movie(props){
 
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
+    const [showModal, setShowModal] = useState(false);
 
-  const handleAddToFavorite = () => {
-    console.log('Added to favorite:', props.recipe.title);
-    setShowModal(true);
-  };
+    const handleCloseModal = () => setShowModal(false);
+    const handleShowModal = () => setShowModal(true);
 
-  return (
-
-    <>
-
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${props.recipe.poster_path}`}  alt={props.recipe.title} />
-        <Card.Body>
-          <Card.Title>{props.recipe.title}</Card.Title>
-          <Card.Title>{props.recipe.overview.substring(0,50)}</Card.Title>
-          <Button variant="primary" onClick={handleShowModal}>
-            Details
-          </Button>
-          <Button variant="success" onClick={handleAddToFavorite}>
-            Add to favorite
-          </Button>
+    return (
+      <>
+        <Card id = 'card'>
+        <Card.Img style={{height :"400px"}} variant="top" src = {`https://image.tmdb.org/t/p/w500/${props.data.posterPath}`} />
+        <Card.Body id="card-body">
+            <Card.Title>{props.data.title}</Card.Title>
+            
+            <div id = 'button'>
+            <Button id="add-fav-btn" variant="primary" onClick={handleShowModal}>Add to favorite list</Button>
+            </div>
         </Card.Body>
-      </Card>
-      <ModalMovie show={showModal} handleClose={handleCloseModal} recipe={props.recipe} />
-    </>
-  );
+
+        </Card>
+        <hr id ='hr1'></hr>
+        <ModalMovie data = {props.data} handleClose = {handleCloseModal} show = {showModal} />
+      </> 
+    ) 
 }

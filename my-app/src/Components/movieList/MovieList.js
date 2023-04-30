@@ -1,17 +1,14 @@
-import Movie from '../movie/Movie'
-export default function MovieList(props) {
-    return (
+import Movie from '../movie/Movie';
+import './MovieList.css';
+export default function MovieList(props){
+    return(
         <>
-
-
-            {
-                props.recipes.map(recipe => {
-                    return (
-                        <Movie recipe={recipe} />
-                    )
-                })
-            }
+        <h2 id = "header">Net Flex</h2>
+        <div id = "container">
+            {props.data.map(movie => {
+                return <Movie data = {movie}/>
+            })}
+        </div>
         </>
     )
 }
-
