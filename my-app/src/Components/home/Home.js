@@ -1,39 +1,32 @@
-
-import MovieList from '../movieList/MovieList'
-
-import{ useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
+import MovieList from '../movieList/MovieList';
 
 export default function Home(){
-     const [trending,setTrending]=useState([])
-    async function getMovies(){
-        const url=process.env.REACT_APP_URL;
-        
-        const response = await fetch(`${url}/trending`);
-         
-        const trendingData = await response.json()
-          
-         setTrending(trendingData);
-        
-    }
-   
+    
+    const url = process.env.REACT_APP_URL;
 
-    function commentHandler(newTrend , id){
-        trending.map(trend=>{
-            if(trend.id === id){
-                
-                trend.comments = newTrend.userComment
-                return trend;
-            }else{
-                return trend
-            }
-        })
+    const [trending, setTrending] = useState([]);
+
+    async function fetchTrending(){
+
+        const response = await fetch(`${url}/trending`);
+        const trendingData = await response.json();
+        setTrending(trendingData);
     }
-     useEffect(()=>{
-        getMovies()
-     },[])  
-    return(
+
+    useEffect(() => {fetchTrending()}, []);
+
+    function addCommentProp(comment, id){
+       for (const movie of trending) {
+             if (movie.id === id) { 
+                 movie.comment = comment;
+            }
+        }
+    }
+    
+    return (
         <>
-        <MovieList  trending={trending} commentHandler={commentHandler}/>
+        <MovieList data = {trending} addCommentProp = {addCommentProp}/>
         </>
     )
 }
