@@ -1,15 +1,15 @@
-import Movie from '../movie/Movie'
-
+import Movie from '../movie/Movie';
+import './MovieList.css';
 export default function MovieList(props){
     return(
         <>
-         {
-            props.trending.map(trend =>{
-                return(
-                    <Movie trend={trend} commentHandler={props.commentHandler}/>
-                )
-            })
-        }
+        <h2 id = "header">Net Flex </h2>
+        <div id = "container">
+            {props.data.map(movie => {
+             
+                return <Movie data = {movie} addCommentProp = {props.addCommentProp}/>
+            })}
+        </div>
         </>
     )
 }
