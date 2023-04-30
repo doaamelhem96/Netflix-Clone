@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import CommentMovie from '../CommentMovie/CommentMovie';
+import CommentMovie from "../CommentMovie/CommentMovie";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './FavList.css';

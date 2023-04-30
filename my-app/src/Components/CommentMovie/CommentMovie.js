@@ -1,6 +1,5 @@
 import Form from 'react-bootstrap/Form';
 
-
 export default function CommentMovie (props){
   
     return (

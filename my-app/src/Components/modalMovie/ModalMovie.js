@@ -1,7 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
-<<<<<<< HEAD
 import { useRef } from 'react';
 import CommentMovie from '../CommentMovie/CommentMovie';
 import './ModalMovie.css'
@@ -45,19 +44,6 @@ export default function ModalMovie(props){
         props.handleClose();
         commentHandler();
         addFavorite();
-=======
-import CommentMovie from '../commentMovie/CommentMovie';
-import './ModalMovie.css'
-
-export default function ModalMovie(props){
-    
-    const [showComment, setShowComment] = useState(false);
-    const handleComment = () => setShowComment(!showComment);
-
-
-    function commentState () {
-        return ( showComment ? 'Cancel comment' : 'Add comment')
->>>>>>> class-18
     }
 
     return (
@@ -68,27 +54,16 @@ export default function ModalMovie(props){
         </Modal.Header>
         <img id='modal-img' src = {`https://image.tmdb.org/t/p/w500/${props.data.posterPath}`} alt = {props.data.title}/>
         <Modal.Body>{props.data.overview}</Modal.Body>
-<<<<<<< HEAD
         <p id = "comment">{`Your Comment : ${props.data.comment || "No comments added"}`}</p>
         {showComment ? <CommentMovie comment = {commentData}/> : null}
-=======
-        {showComment ? <CommentMovie/> : null}
->>>>>>> class-18
         <Modal.Footer>
             <Button variant="secondary" onClick={props.handleClose}>
             Close
             </Button>
-<<<<<<< HEAD
             <Button variant="primary" onClick={handleCommentBtn}>
            {commentBtnState()}
             </Button>
             <Button variant="primary" onClick={addToFavHandler}>
-=======
-            <Button variant="primary" onClick={handleComment}>
-           {commentState()}
-            </Button>
-            <Button variant="primary" onClick={props.handleClose}>
->>>>>>> class-18
             Save Changes
             </Button>
         </Modal.Footer>
