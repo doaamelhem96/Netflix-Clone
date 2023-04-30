@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieList from '../movieList/MovieList';
+<<<<<<< HEAD
 
 export default function Home(){
     
@@ -7,6 +8,15 @@ export default function Home(){
 
     const [trending, setTrending] = useState([]);
 
+=======
+import './Home.css';
+export default function Home(){
+    
+    const url = process.env.REACT_APP_URL;
+
+    const [trending, setTrending] = useState([]);
+
+>>>>>>> class-18
     async function fetchTrending(){
 
         const response = await fetch(`${url}/trending`);
@@ -15,6 +25,7 @@ export default function Home(){
     }
 
     useEffect(() => {fetchTrending()}, []);
+<<<<<<< HEAD
 
     function addCommentProp(comment, id){
        for (const movie of trending) {
@@ -27,6 +38,12 @@ export default function Home(){
     return (
         <>
         <MovieList data = {trending} addCommentProp = {addCommentProp}/>
+=======
+    
+    return (
+        <>
+        <MovieList data = {trending}/>
+>>>>>>> class-18
         </>
     )
 }
